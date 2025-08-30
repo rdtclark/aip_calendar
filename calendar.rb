@@ -213,69 +213,46 @@ class SVGCalendarGenerator
 		lines.join("\n        ")
 	end
 
-	# SVG style definitions with embedded fonts and transparent background
 	def svg_styles
 		<<~STYLES
-			<defs>
-				<!-- Font definitions -->
-				<style><![CDATA[
-					@font-face {
-						font-family: 'OpenSansCustom';
-						src: url('#{OPEN_SANS_FONT}') format('woff2');
-						font-weight: 600;
-						font-style: normal;
-					}
-					
-					@font-face {
-						font-family: 'PlayfairDisplayCustom';
-						src: url('#{PLAYFAIR_FONT}') format('woff2');
-						font-weight: 400;
-						font-style: normal;
-					}
-					
-					@font-face {
-						font-family: 'PlayfairDisplayCustom';
-						src: url('#{PLAYFAIR_BOLD_FONT}') format('woff2');
-						font-weight: 700;
-						font-style: normal;
-					}
-					
-					.month-title { 
-						font-family: 'OpenSansCustom', 'Open Sans', 'Helvetica Neue', Arial, sans-serif; 
-						font-weight: 600; 
-						font-size: 72px; 
-						fill: #D4A574; 
-					}
-					.month-note { 
-						font-family: 'PlayfairDisplayCustom', 'Playfair Display', Georgia, serif; 
-						font-size: 24px; 
-						fill: #333; 
-						text-anchor: middle; 
-					}
-					.day-header { 
-						font-family: 'PlayfairDisplayCustom', 'Playfair Display', Georgia, serif; 
-						font-size: 36px; 
-						fill: #D4A574; 
-						font-weight: bold; 
-						text-anchor: middle;
-					}
-					.day-number { 
-						font-family: 'PlayfairDisplayCustom', 'Playfair Display', Georgia, serif; 
-						font-size: 48px; 
-						fill: #333; 
-						text-anchor: middle;
-					}
-					.important-header { 
-						font-family: 'PlayfairDisplayCustom', 'Playfair Display', Georgia, serif; 
-						font-size: 36px; 
-						fill: #D4A574; 
-					}
-					.important-line { 
-						stroke: #333; 
-						stroke-width: 1; 
-					}
-				]]></style>
-			</defs>
+	    <defs>
+	    	<style><![CDATA[
+	    		.month-title { 
+	    			font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; 
+	    			font-weight: 600; 
+	    			font-size: 72px; 
+	    			fill: #D4A574; 
+	    		}
+	    		.month-note { 
+	    			font-family: 'Playfair Display', Georgia, serif; 
+	    			font-size: 24px; 
+	    			fill: #333; 
+	    			text-anchor: middle; 
+	    		}
+	    		.day-header { 
+	    			font-family: 'Playfair Display', Georgia, serif; 
+	    			font-size: 36px; 
+	    			fill: #D4A574; 
+	    			font-weight: bold; 
+	    			text-anchor: middle;
+	    		}
+	    		.day-number { 
+	    			font-family: 'Playfair Display', Georgia, serif; 
+	    			font-size: 48px; 
+	    			fill: #333; 
+	    			text-anchor: middle;
+	    		}
+	    		.important-header { 
+	    			font-family: 'Playfair Display', Georgia, serif; 
+	    			font-size: 36px; 
+	    			fill: #D4A574; 
+	    		}
+	    		.important-line { 
+	    			stroke: #333; 
+	    			stroke-width: 1; 
+	    		}
+	    	]]></style>
+	    </defs>
 		STYLES
 	end
 

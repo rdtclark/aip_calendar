@@ -42,3 +42,41 @@ ruby calendar.rb -m 1 -y 2025 -n 12
 
 ## Generate with monthly notes
 ruby calendar.rb -m 3 -y 2025 -n 3 -f notes.csv
+
+## Edit variables to change fonts line spacing etc
+
+Look inside the `calendar.rb` file and change as needed.
+
+# SVG canvas dimensions in pixels
+CANVAS_WIDTH = 1300
+CANVAS_HEIGHT = 800
+EXTRA_WEEK_HEIGHT = 80
+
+# Grid layout
+GRID_START_X = 60
+GRID_START_Y = 280
+CELL_WIDTH = 100
+CELL_HEIGHT = 80
+
+# Typography
+MONTH_TITLE_Y = 80
+NOTE_START_Y = 120
+NOTE_LINE_HEIGHT = 30
+NOTE_CHAR_LIMIT = 255
+NOTE_WRAP_LENGTH = 80
+
+# Important dates section
+IMPORTANT_DATES_X = 1000
+IMPORTANT_DATES_Y = GRID_START_Y - 20
+IMPORTANT_DATES_START_Y = 320
+IMPORTANT_DATES_LINE_SPACING = 80
+IMPORTANT_DATES_TEXT_WIDTH = 160
+IMPORTANT_DATES_LINE_WIDTH = 300
+
+# Font sizes
+MONTH_TITLE_FONT_SIZE = 80
+DAY_HEADER_FONT_SIZE = 32
+DAY_NUMBER_FONT_SIZE = 32
+MONTH_NOTE_FONT_SIZE = 22
+IMPORTANT_HEADER_FONT_SIZE = 40
+

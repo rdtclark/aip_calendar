@@ -23,32 +23,33 @@ class SVGCalendarGenerator
 	CANVAS_HEIGHT = 800
 	EXTRA_WEEK_HEIGHT = 80
 
-	# Grid layout constants
+	# Grid layout
 	GRID_START_X = 60
 	GRID_START_Y = 280
 	CELL_WIDTH = 100
 	CELL_HEIGHT = 80
 
-	# Typography positioning
+	# Typography
 	MONTH_TITLE_Y = 80
 	NOTE_START_Y = 120
 	NOTE_LINE_HEIGHT = 30
 	NOTE_CHAR_LIMIT = 255
 	NOTE_WRAP_LENGTH = 80
 
-	# Important dates section - RIGHT SIDE positioning
+	# Important dates section
 	IMPORTANT_DATES_X = 1000
-	IMPORTANT_DATES_Y = GRID_START_Y - 20  # Same Y position as day headers
+	IMPORTANT_DATES_Y = GRID_START_Y - 20
 	IMPORTANT_DATES_START_Y = 320
 	IMPORTANT_DATES_LINE_SPACING = 80
 	IMPORTANT_DATES_TEXT_WIDTH = 160
 	IMPORTANT_DATES_LINE_WIDTH = 300
 
-	# Font file paths - put your font files in a 'fonts' directory
-	FONT_DIR = './fonts'
-	OPEN_SANS_FONT = "#{FONT_DIR}/OpenSans-SemiBold.woff2"
-	PLAYFAIR_FONT = "#{FONT_DIR}/PlayfairDisplay-Regular.woff2"
-	PLAYFAIR_BOLD_FONT = "#{FONT_DIR}/PlayfairDisplay-Bold.woff2"
+	# Font sizes
+	MONTH_TITLE_FONT_SIZE = 80
+	DAY_HEADER_FONT_SIZE = 32
+	DAY_NUMBER_FONT_SIZE = 32
+	MONTH_NOTE_FONT_SIZE = 22
+	IMPORTANT_HEADER_FONT_SIZE = 40
 
 	attr_reader :start_month, :start_year, :num_months, :week_start, :notes, :note_line_height
 
@@ -215,44 +216,42 @@ class SVGCalendarGenerator
 
 	def svg_styles
 		<<~STYLES
-	    <defs>
-	    	<style><![CDATA[
-	    		.month-title { 
-	    			font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; 
-	    			font-weight: 600; 
-	    			font-size: 72px; 
-	    			fill: #D4A574; 
-	    		}
-	    		.month-note { 
-	    			font-family: 'Playfair Display', Georgia, serif; 
-	    			font-size: 24px; 
-	    			fill: #333; 
-	    			text-anchor: middle; 
-	    		}
-	    		.day-header { 
-	    			font-family: 'Playfair Display', Georgia, serif; 
-	    			font-size: 36px; 
-	    			fill: #D4A574; 
-	    			font-weight: bold; 
-	    			text-anchor: middle;
-	    		}
-	    		.day-number { 
-	    			font-family: 'Playfair Display', Georgia, serif; 
-	    			font-size: 48px; 
-	    			fill: #333; 
-	    			text-anchor: middle;
-	    		}
-	    		.important-header { 
-	    			font-family: 'Playfair Display', Georgia, serif; 
-	    			font-size: 36px; 
-	    			fill: #D4A574; 
-	    		}
-	    		.important-line { 
-	    			stroke: #333; 
-	    			stroke-width: 1; 
-	    		}
-	    	]]></style>
-	    </defs>
+	<defs>
+		<style><![CDATA[
+			.month-title { 
+				font-family: 'Playfair', serif; 
+				font-size: #{MONTH_TITLE_FONT_SIZE}px; 
+				fill: #D4A574; 
+			}
+			.month-note { 
+				font-family: 'Open Sans', sans-serif; 
+				font-size: #{MONTH_NOTE_FONT_SIZE}px; 
+				fill: #333; 
+				text-anchor: middle; 
+			}
+			.day-header { 
+				font-family: 'Playfair', serif; 
+				font-size: #{DAY_HEADER_FONT_SIZE}px; 
+				fill: #D4A574; 
+				text-anchor: middle;
+			}
+			.day-number { 
+				font-family: 'Open Sans', sans-serif; 
+				font-size: #{DAY_NUMBER_FONT_SIZE}px; 
+				fill: #333; 
+				text-anchor: middle;
+			}
+			.important-header { 
+				font-family: 'Playfair', serif; 
+				font-size: #{IMPORTANT_HEADER_FONT_SIZE}px; 
+				fill: #D4A574; 
+			}
+			.important-line { 
+				stroke: #333; 
+				stroke-width: 1; 
+			}
+		]]></style>
+	</defs>
 		STYLES
 	end
 
